@@ -42,9 +42,9 @@ const themeLight: Theme = {
 const themeDark: Theme = {
   colors: {
     // Background
-    cardBackgroundColor: palette.green200,
+    cardBackgroundColor: palette.green300,
     backgroundColor: palette.black,
-    iconBackgroundColor: palette.green100,
+    iconBackgroundColor: palette.green200,
 
     // Text
     textPrimary: palette.white,
