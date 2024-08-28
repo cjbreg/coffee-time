@@ -6,10 +6,9 @@ const HomeView = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <Text>index</Text>
-      <Text>index</Text>
       <Button
         title="open entry page"
-        onPress={() => router.navigate("/entry")}
+        onPress={() => router.navigate("/station")}
       />
     </SafeAreaView>
   );
