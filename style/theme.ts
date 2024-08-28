@@ -13,6 +13,7 @@ const themeLight: Theme = {
     // Background
     cardBackgroundColor: palette.green300,
     backgroundColor: palette.white,
+    iconBackgroundColor: palette.green100,
 
     // Text
     textPrimary: palette.black,
@@ -20,6 +21,8 @@ const themeLight: Theme = {
 
     // Pressable
     pressableBackgroundColor: palette.green300,
+
+    //Icon
   },
   fontSize: {
     xxl: "24px",
@@ -41,6 +44,7 @@ const themeDark: Theme = {
     // Background
     cardBackgroundColor: palette.green200,
     backgroundColor: palette.black,
+    iconBackgroundColor: palette.green100,
 
     // Text
     textPrimary: palette.white,

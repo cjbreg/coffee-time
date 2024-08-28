@@ -8,6 +8,7 @@ declare module "@emotion/react" {
     colors: {
       cardBackgroundColor: string;
       backgroundColor: string;
+      iconBackgroundColor: string;
       textPrimary: string;
       textSecondary: string;
       pressableBackgroundColor: string;
