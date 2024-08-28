@@ -3,11 +3,13 @@ import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
-import 'react-native-gesture-handler'
+import "react-native-gesture-handler";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { ThemeProvider } from "@emotion/react";
 import { themeDark, themeLight } from "@/style/theme";
+import { Provider } from "react-redux";
+import { store } from "@/store";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -29,17 +31,19 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider theme={colorScheme === "dark" ? themeDark : themeLight}>
-      <Stack>
-        <Stack.Screen name="index" options={{ headerShown: false }} />
-        <Stack.Screen
-          name="station"
-          options={{
-            presentation: "modal",
-          }}
-        />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={colorScheme === "dark" ? themeDark : themeLight}>
+        <Stack>
+          <Stack.Screen name="index" options={{ headerShown: false }} />
+          <Stack.Screen
+            name="station"
+            options={{
+              presentation: "modal",
+            }}
+          />
+          <Stack.Screen name="+not-found" />
+        </Stack>
+      </ThemeProvider>
+    </Provider>
   );
 }

@@ -8,8 +8,13 @@ import SafeAreaView from "@/components/layout/SafeAreaView";
 import CardText from "@/components/text/CardText";
 import PressableCard from "@/components/PressableCard";
 import IconView from "@/components/IconView";
+import { useGetMachineByIdQuery } from "../services/machine";
 
 const HomeView = () => {
+  const { data, error, isLoading } = useGetMachineByIdQuery(
+    "60ba1ab72e35f2d9c786c610",
+  );
+
   return (
     <SafeAreaView>
       <Heading>
