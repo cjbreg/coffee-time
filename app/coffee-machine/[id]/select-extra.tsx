@@ -9,7 +9,7 @@ import SubHeader from "@/components/text/SubHeader";
 import { CoffeeExtra } from "@/services/types";
 import { RootState } from "@/store";
 import { selectCoffeeExtra } from "@/store/actions/coffeeActions";
-import { router } from "expo-router";
+import { Href, router, useGlobalSearchParams } from "expo-router";
 import { useCallback, useMemo } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { useDispatch } from "react-redux";
@@ -18,6 +18,9 @@ import SubHeading from "@/components/layout/SubHeading";
 
 const SelectExtra = () => {
   const dispatch = useDispatch();
+  const params = useGlobalSearchParams();
+  const machineId = Array.isArray(params.id) ? params.id[0] : params.id;
+
   const machine = useSelector(
     (state: RootState) => state.coffeeMachine.selectedMachine,
   );
@@ -38,9 +41,9 @@ const SelectExtra = () => {
   const onSubmit = useCallback(
     (item: CoffeeExtra) => {
       dispatch(selectCoffeeExtra(item));
-      router.navigate("/coffee-machine/[id]/overview");
+      router.navigate(`/coffee-machine/${machineId}/overview` as Href<string>);
     },
-    [dispatch],
+    [dispatch, machineId],
   );
 
   const renderItem = useCallback(

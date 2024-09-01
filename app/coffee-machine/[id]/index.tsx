@@ -9,36 +9,44 @@ import SubHeader from "@/components/text/SubHeader";
 import { CoffeeType } from "@/services/types";
 import { RootState } from "@/store";
 import { selectCoffeeType } from "@/store/actions/coffeeActions";
-import { router } from "expo-router";
+import { Href, router, useGlobalSearchParams } from "expo-router";
+import { useCallback } from "react";
 import { View } from "react-native";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
 export default function SelectType() {
   const dispatch = useDispatch();
+  const params = useGlobalSearchParams();
+  const machineId = Array.isArray(params.id) ? params.id[0] : params.id;
+
   const machine = useSelector(
     (state: RootState) => state.coffeeMachine.selectedMachine,
   );
 
-  const onSubmit = (item: CoffeeType) => {
-    dispatch(selectCoffeeType(item));
-    router.navigate("/coffee-machine/[id]/select-size");
-  };
+  const onSubmit = useCallback(
+    (item: CoffeeType) => {
+      dispatch(selectCoffeeType(item));
+      router.navigate(
+        `/coffee-machine/${machineId}/select-size` as Href<string>,
+      );
+    },
+    [dispatch, machineId],
+  );
 
-  const renderItem = ({ item }: { item: CoffeeType }) => {
-    const handlePress = () => {
-      onSubmit(item);
-    };
-
-    return (
-      <View style={{ paddingVertical: 4 }}>
-        <PressableCard onPress={handlePress}>
-          <IconView />
-          <CardText>{item.name}</CardText>
-        </PressableCard>
-      </View>
-    );
-  };
+  const renderItem = useCallback(
+    ({ item }: { item: CoffeeType }) => {
+      return (
+        <View style={{ paddingVertical: 4 }}>
+          <PressableCard onPress={() => onSubmit(item)}>
+            <IconView />
+            <CardText>{item.name}</CardText>
+          </PressableCard>
+        </View>
+      );
+    },
+    [onSubmit],
+  );
 
   return (
     <SafeAreaView>

@@ -4,7 +4,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
 import "react-native-gesture-handler";
-
+import Toast from "react-native-toast-message";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { ThemeProvider } from "@emotion/react";
 import { themeDark, themeLight } from "@/style/theme";
@@ -44,6 +44,8 @@ export default function RootLayout() {
           />
           <Stack.Screen name="+not-found" />
         </Stack>
+
+        <Toast />
       </ThemeProvider>
     </Provider>
   );
