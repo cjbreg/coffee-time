@@ -1,3 +1,3 @@
 import HomeView from "@/screens/HomeScreen";
 
-export default HomeView
+export default HomeView;

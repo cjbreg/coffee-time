@@ -36,9 +36,10 @@ export default function RootLayout() {
         <Stack>
           <Stack.Screen name="index" options={{ headerShown: false }} />
           <Stack.Screen
-            name="station"
+            name="coffee-machine/[id]"
             options={{
               presentation: "modal",
+              headerShown: false,
             }}
           />
           <Stack.Screen name="+not-found" />

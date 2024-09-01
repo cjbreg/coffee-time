@@ -1,8 +1,8 @@
 import { Theme } from "@emotion/react";
 
 const palette = {
-  black: "#000000",
-  white: "#ffffff",
+  black: "#2a2a2a",
+  white: "#fefefe",
   green100: "#219653",
   green200: "#9BC88B",
   green300: "#AED7A0",
@@ -44,11 +44,11 @@ const themeDark: Theme = {
     // Background
     cardBackgroundColor: palette.green300,
     backgroundColor: palette.black,
-    iconBackgroundColor: palette.green200,
+    iconBackgroundColor: palette.green100,
 
     // Text
     textPrimary: palette.white,
-    textSecondary: palette.green100,
+    textSecondary: palette.black,
 
     // Pressable
     pressableBackgroundColor: palette.green200,

@@ -1,9 +1,12 @@
 import React from "react";
 import Card from "./layout/Card";
-import { MotiPressable } from "moti/interactions";
+import { MotiPressable, MotiPressableProps } from "moti/interactions";
 
-const PressableCard = (props: { children: JSX.Element | JSX.Element[] }) => {
+interface IPressableCard extends MotiPressableProps {}
+
+const PressableCard = (props: IPressableCard) => {
   const { children } = props;
+
   return (
     <MotiPressable
       animate={({ hovered, pressed }) => {
@@ -13,6 +16,7 @@ const PressableCard = (props: { children: JSX.Element | JSX.Element[] }) => {
           scale: pressed ? 0.97 : 1,
         };
       }}
+      {...props}
     >
       <Card>{children}</Card>
     </MotiPressable>
