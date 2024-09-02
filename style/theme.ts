@@ -1,8 +1,8 @@
 import { Theme } from "@emotion/react";
 
 const palette = {
-  black: "#000000",
-  white: "#ffffff",
+  black: "#2a2a2a",
+  white: "#fefefe",
   green100: "#219653",
   green200: "#9BC88B",
   green300: "#AED7A0",
@@ -12,7 +12,9 @@ const themeLight: Theme = {
   colors: {
     // Background
     cardBackgroundColor: palette.green300,
+    subCardBackgroundColor: palette.green200,
     backgroundColor: palette.white,
+    iconBackgroundColor: palette.green100,
 
     // Text
     textPrimary: palette.black,
@@ -20,6 +22,8 @@ const themeLight: Theme = {
 
     // Pressable
     pressableBackgroundColor: palette.green300,
+
+    //Icon
   },
   fontSize: {
     xxl: "24px",
@@ -39,12 +43,14 @@ const themeLight: Theme = {
 const themeDark: Theme = {
   colors: {
     // Background
-    cardBackgroundColor: palette.green200,
+    cardBackgroundColor: palette.green300,
+    subCardBackgroundColor: palette.green200,
     backgroundColor: palette.black,
+    iconBackgroundColor: palette.green100,
 
     // Text
     textPrimary: palette.white,
-    textSecondary: palette.green100,
+    textSecondary: palette.black,
 
     // Pressable
     pressableBackgroundColor: palette.green200,

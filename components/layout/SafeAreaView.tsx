@@ -1,9 +1,9 @@
 import styled from "@emotion/native";
 
-const View = styled.SafeAreaView`
+const SafeAreaView = styled.SafeAreaView`
   display: flex;
   background-color: ${(props) => props.theme.colors.backgroundColor};
   flex: 1;
 `;
 
-export default View;
+export default SafeAreaView;
