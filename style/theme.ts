@@ -12,6 +12,7 @@ const themeLight: Theme = {
   colors: {
     // Background
     cardBackgroundColor: palette.green300,
+    subCardBackgroundColor: palette.green200,
     backgroundColor: palette.white,
     iconBackgroundColor: palette.green100,
 
@@ -43,6 +44,7 @@ const themeDark: Theme = {
   colors: {
     // Background
     cardBackgroundColor: palette.green300,
+    subCardBackgroundColor: palette.green200,
     backgroundColor: palette.black,
     iconBackgroundColor: palette.green100,
 

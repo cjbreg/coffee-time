@@ -7,6 +7,7 @@ declare module "@emotion/react" {
   export interface Theme {
     colors: {
       cardBackgroundColor: string;
+      subCardBackgroundColor: string;
       backgroundColor: string;
       iconBackgroundColor: string;
       textPrimary: string;

@@ -11,7 +11,7 @@ export default function CoffeeMachineLayout() {
   const params = useGlobalSearchParams();
 
   const machineId = Array.isArray(params.id) ? params.id[0] : params.id;
-  const { data, error, isLoading } = useGetMachineByIdQuery(machineId + 1);
+  const { data, error, isLoading } = useGetMachineByIdQuery(machineId);
 
   useEffect(() => {
     if (data && !isLoading && !error) {

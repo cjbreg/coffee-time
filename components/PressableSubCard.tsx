@@ -1,10 +1,9 @@
-import React, { ReactNode } from "react";
-import Card from "./layout/Card";
+import React from "react";
 import { MotiPressable, MotiPressableProps } from "moti/interactions";
 
 interface IPressableCard extends MotiPressableProps {}
 
-const PressableCard = (props: IPressableCard) => {
+const PressableSubCard = (props: IPressableCard) => {
   const { children } = props;
 
   return (
@@ -18,9 +17,9 @@ const PressableCard = (props: IPressableCard) => {
       }}
       {...props}
     >
-      <Card>{children as ReactNode}</Card>
+      {children}
     </MotiPressable>
   );
 };
 
-export default PressableCard;
+export default PressableSubCard;
