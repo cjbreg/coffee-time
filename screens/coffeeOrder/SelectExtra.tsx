@@ -8,11 +8,13 @@ import { RootState } from "@/store";
 import { selectCoffeeExtra } from "@/store/actions/coffeeActions";
 import { Href, router, useGlobalSearchParams } from "expo-router";
 import { useCallback, useMemo } from "react";
-import { TouchableOpacity, View } from "react-native";
+import { View } from "react-native";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import SubHeading from "@/components/layout/SubHeading";
 import CoffeeExtraOptions from "@/components/CoffeeExtraOptions";
+
+/// WIP ///
 
 const SelectExtraScreen = () => {
   const dispatch = useDispatch();
@@ -31,10 +33,6 @@ const SelectExtraScreen = () => {
       machine?.extras.filter((extra) => coffeeType?.extras.includes(extra._id)),
     [machine, coffeeType],
   );
-
-  const onGoBack = useCallback(() => {
-    router.back();
-  }, []);
 
   const onSubmit = useCallback(
     (item: CoffeeExtra) => {
@@ -56,11 +54,9 @@ const SelectExtraScreen = () => {
   return (
     <SafeAreaView>
       <Heading>
-        <TouchableOpacity onPress={onGoBack}>
-          <SubHeading>
-            <SubHeader>Brew with Lex</SubHeader>
-          </SubHeading>
-        </TouchableOpacity>
+        <SubHeading>
+          <SubHeader>Brew with Lex</SubHeader>
+        </SubHeading>
         <Header>Select your extra's</Header>
       </Heading>
       <View>

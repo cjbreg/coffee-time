@@ -33,10 +33,6 @@ const SelectSizeScreen = () => {
     [machine, coffeeType],
   );
 
-  const onGoBack = useCallback(() => {
-    router.back();
-  }, []);
-
   const onSubmit = useCallback(
     (item: CoffeeSize) => {
       dispatch(selectCoffeeSize(item));
@@ -62,11 +58,9 @@ const SelectSizeScreen = () => {
   return (
     <SafeAreaView>
       <Heading>
-        <TouchableOpacity onPress={onGoBack}>
-          <SubHeading>
-            <SubHeader>Brew with Lex</SubHeader>
-          </SubHeading>
-        </TouchableOpacity>
+        <SubHeading>
+          <SubHeader>Brew with Lex</SubHeader>
+        </SubHeading>
         <Header>Select your size</Header>
       </Heading>
       <View>
